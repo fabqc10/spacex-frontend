@@ -1,6 +1,7 @@
 "use client";
-
 import Image from "next/image";
+import Link from "next/link";
+import { FaWikipediaW } from "react-icons/fa";
 
 type props = {
   astronaut: Astronaut;
@@ -24,15 +25,10 @@ const AstronautCard = ({ astronaut }: props) => {
         <p className="text-gray-700 text-base">Agency: {astronaut.agency}</p>
         <p className="text-gray-700 text-base">Status: {astronaut.status}</p>
       </div>
-      <div className="px-6 py-4">
-        <a
-          href={astronaut.wikipedia}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="text-blue-500 hover:underline"
-        >
-          Learn more on Wikipedia
-        </a>
+      <div className="px-6 py-4 mx-auto flex justify-center">
+        <Link href={astronaut.wikipedia}>
+          <FaWikipediaW size={20} />
+        </Link>
       </div>
     </div>
   );
