@@ -1,3 +1,4 @@
+"use client"
 import React, { createContext, ReactNode, useCallback, useEffect, useState } from "react";
 import { httpGetCrew } from "../requests";
 
