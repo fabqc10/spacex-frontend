@@ -18,7 +18,7 @@ type LaunchesContextType = {
   currentPage: number;
 };
 
-export const AstronautContext = createContext<LaunchesContextType>({
+export const LaunchesContext = createContext<LaunchesContextType>({
   launches: [],
   getlaunches: () => {},
   currentPage: 1,
@@ -41,8 +41,8 @@ export const LaunchesProvider = ({ children }: LaunchesProviderProps) => {
   const value: LaunchesContextType = { launches, getlaunches, currentPage };
 
   return (
-    <AstronautContext.Provider value={value}>
+    <LaunchesContext.Provider value={value}>
       {children}
-    </AstronautContext.Provider>
+    </LaunchesContext.Provider>
   );
 };
