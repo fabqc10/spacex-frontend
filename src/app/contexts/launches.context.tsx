@@ -13,7 +13,7 @@ type LaunchesProviderProps = {
 };
 
 type LaunchesContextType = {
-  launches: Astronaut[];
+  launches: Launch[];
   getlaunches: (page: number) => void;
   currentPage: number;
 };
@@ -25,7 +25,7 @@ export const LaunchesContext = createContext<LaunchesContextType>({
 });
 
 export const LaunchesProvider = ({ children }: LaunchesProviderProps) => {
-  const [launches, setlaunches] = useState<Astronaut[]>([]);
+  const [launches, setlaunches] = useState<Launch[]>([]);
   const [currentPage, setCurrentPage] = useState<number>(1);
 
   const getlaunches = useCallback(async (page: number) => {
