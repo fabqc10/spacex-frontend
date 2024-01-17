@@ -3,6 +3,7 @@ import React, { useContext } from "react";
 import { AstronautContext } from "../contexts/astronaut.context";
 import AstronautCard from "../components/AstronautCard";
 import RevealEffect from "../components/RevealEffect";
+import Pagination from "../components/Pagination";
 
 const Astronauts = () => {
   const { astronauts } = useContext(AstronautContext);
@@ -18,6 +19,7 @@ const Astronauts = () => {
           </RevealEffect>
         ))}
       </div>
+      <Pagination />
     </div>
   );
 };
