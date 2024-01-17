@@ -6,7 +6,7 @@ import RevealEffect from "../components/RevealEffect";
 import Pagination from "../components/Pagination";
 
 const Astronauts = () => {
-  const { astronauts } = useContext(AstronautContext);
+  const { astronauts, getAstronauts, currentPage } = useContext(AstronautContext);
   return (
     <div className="w-full md:w-4/5 lg:w-3/5 xl:w-4/5 mx-auto">
       <h3 className="text-gray-300 text-4xl text-center p-5">
@@ -19,7 +19,7 @@ const Astronauts = () => {
           </RevealEffect>
         ))}
       </div>
-      <Pagination />
+      <Pagination currentPage={currentPage} fetchFunction={getAstronauts}/>
     </div>
   );
 };

@@ -1,13 +1,29 @@
 import React from "react";
 
-const Pagination = () => {
+type props = {
+    currentPage:number,
+    fetchFunction:(page:number)=>void
+}
+
+const Pagination = ({currentPage,fetchFunction}:props) => {
+
+    const handleNext = () => {
+        fetchFunction(currentPage + 1);
+    }
+
+    const handlePrev = () => {
+        if(currentPage > 1){
+            fetchFunction(currentPage - 1);
+        }
+    }
+
   return (
       <div className="flex flex-row mx-auto justify-center pb-10">
         <button
           type="button"
           className="bg-gray-800 text-white rounded-l-md border-r border-gray-100 py-2 hover:bg-red-700 hover:text-white px-3"
         >
-          <div className="flex flex-row align-middle">
+          <div className="flex flex-row align-middle" onClick={handlePrev}>
             <svg
               className="w-5 mr-2"
               fill="currentColor"
@@ -27,7 +43,7 @@ const Pagination = () => {
           type="button"
           className="bg-gray-800 text-white rounded-r-md py-2 border-l border-gray-200 hover:bg-red-700 hover:text-white px-3"
         >
-          <div className="flex flex-row align-middle">
+          <div className="flex flex-row align-middle" onClick={handleNext}>
             <span className="mr-2">Next</span>
             <svg
               className="w-5 ml-2"

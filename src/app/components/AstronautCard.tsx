@@ -15,8 +15,8 @@ const AstronautCard = ({ astronaut }: props) => {
           src={astronaut.image}
           alt={astronaut.name}
           layout="fill"
-          objectFit="contain"
-          className="rounded-full"
+          objectFit="cover"
+          className="rounded-t"
           loading="lazy"
         />
       </div>
