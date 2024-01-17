@@ -16,7 +16,7 @@ type Launch = {
   success: boolean;
   upcoming: boolean;
   links: {
-    path: {
+    patch: {
       small: string;
       large: string;
     };
