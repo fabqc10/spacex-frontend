@@ -9,7 +9,7 @@ const LaunchCard = ({ launch }: props) => {
   const [showFullDetails, setShowFullDetails] = useState(false);
 
   const handleToggleDetails = () => {
-    setShowFullDetails(!showFullDetails);
+    setShowFullDetails((prev) => !prev);
   };
 
   useEffect(() => {
@@ -19,23 +19,42 @@ const LaunchCard = ({ launch }: props) => {
   const renderDetails = () => {
     const { details } = launch;
     const maxLength = 100;
-
-    if (!details || details.length <= maxLength || showFullDetails) {
-      return details;
-    }
-
-    return (
-      <>
-        {details.slice(0, maxLength)}
-        <span
-          className="text-blue-500 cursor-pointer"
-          onClick={handleToggleDetails}
-        >
-          {showFullDetails ? " Read less" : " Read more"}
-        </span>
-      </>
-    );
+  
+    if (!details) {
+        return null;
+      }
+    
+      const truncatedDetails = details.slice(0, maxLength);
+    
+      return (
+        <>
+          {showFullDetails ? (
+            details
+          ) : (
+            <>
+              {truncatedDetails}
+              {details.length > maxLength && (
+                <span
+                  className="text-blue-500 cursor-pointer"
+                  onClick={handleToggleDetails}
+                >
+                  Read more
+                </span>
+              )}
+            </>
+          )}
+          {showFullDetails && (
+            <span
+              className="text-blue-500 cursor-pointer"
+              onClick={handleToggleDetails}
+            >
+              Read less
+            </span>
+          )}
+        </>
+      );
   };
+  
 
   return (
     <div className="max-w-xl mx-auto shadow-md rounded-md overflow-hidden bg-white bg-opacity-60 transform hover:scale-105 transition-transform mb-10">
