@@ -22,6 +22,7 @@ export const RocketsContext = createContext<RocketsContextType>({
 
 export const RocketProvider = ({ children }: RocketProviderProps) => {
   const [rockets, setRockets] = useState<Rocket[]>([]);
+  console.log("ROCKETS1",rockets)
 
   const getRockets = useCallback(async () => {
     const fetchedRockets = await httpGetRockets();

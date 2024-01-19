@@ -5,6 +5,7 @@ import Navbar from "./components/Navbar";
 import Background from "./components/Background";
 import { AstronautProvider } from "./contexts/astronaut.context";
 import { LaunchesProvider } from "./contexts/launches.context";
+import { RocketProvider } from "./contexts/rockets.context";
 
 const roboto = Roboto_Condensed({ subsets: ["latin"] });
 
@@ -21,13 +22,15 @@ export default function RootLayout({
   return (
     <html lang="en">
       <LaunchesProvider>
-        <AstronautProvider>
-          <body className={roboto.className}>
-            <Navbar />
-            <Background />
-            {children}
-          </body>
-        </AstronautProvider>
+        <RocketProvider>
+          <AstronautProvider>
+            <body className={roboto.className}>
+              <Navbar />
+              <Background />
+              {children}
+            </body>
+          </AstronautProvider>
+        </RocketProvider>
       </LaunchesProvider>
     </html>
   );

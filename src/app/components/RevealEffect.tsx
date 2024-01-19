@@ -3,12 +3,13 @@ import Fade from 'react-reveal/Fade';
 
 type props = {
     children: ReactNode;
+    direcction?: string;
   }
 
-const RevealEffect = ({children}:props) => {
+const RevealEffect = ({children,direcction = 'bottom'}:props) => {
   return (
     <div>
-      <Fade bottom>
+      <Fade {...{ [direcction]: true }}>
         {children}
       </Fade>
     </div>
