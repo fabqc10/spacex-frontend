@@ -33,6 +33,9 @@ type Rocket = {
   type: string;
   company: string;
   country: string;
+  active: boolean;
+  cost: number;
+  firstFlight: number;
   description: string;
   height: {
     meters: number;
