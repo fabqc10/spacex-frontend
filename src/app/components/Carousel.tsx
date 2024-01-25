@@ -35,14 +35,6 @@ const CarouselImg: React.FC<Props> = ({ rocket }) => {
               alt={`image ${idx + 1}`}
               className="absolute block w-full h-1/2 -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
             />
-            {/* <Image
-              src={img}
-              fill
-              objectFit="cover"
-              className="rounded"
-              loading="lazy"
-              alt="img"
-            /> */}
           </div>
         ))}
       </div>
@@ -51,14 +43,14 @@ const CarouselImg: React.FC<Props> = ({ rocket }) => {
         className="absolute top-0 start-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none"
         onClick={prevSlide}
       >
-        <FaArrowAltCircleLeft size={25} color="white"/>
+        <FaArrowAltCircleLeft size={25} color="white" />
       </button>
       <button
         type="button"
         className="absolute top-0 end-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none"
         onClick={nextSlide}
       >
-        <FaArrowAltCircleRight size={25} color="white"/>
+        <FaArrowAltCircleRight size={25} color="white" />
       </button>
     </div>
   );

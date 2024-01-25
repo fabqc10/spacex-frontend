@@ -115,6 +115,11 @@ img{
   transition: background-size .5s ease-in-out;
 }
 
+.link-underline.active {
+	background-size: 100% 3px;
+	background-position: 0 100%;
+  }
+
 .link-underline-black {
   background-image: linear-gradient(transparent, transparent), linear-gradient(#F2C, #F2C);
 }
