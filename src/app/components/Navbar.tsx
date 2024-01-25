@@ -11,7 +11,7 @@ const Navbar = () => {
     setActive(!active);
   };
   return (
-    <nav className="flex items-center p-4 bg-black-800 space-x-10 text-white p-15 ml-10 absolute">
+    <nav className="flex items-center p-4 bg-black-800 space-x-10 text-white p-15 ml-10">
       <div className="w-40 h-auto">
         <Link href={"/"}>
           <Logo />
