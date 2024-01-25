@@ -38,7 +38,7 @@ const LaunchCard = ({ launch }: props) => {
                   className="text-blue-500 cursor-pointer"
                   onClick={handleToggleDetails}
                 >
-                  Read more
+                  ...Read more
                 </span>
               )}
             </>

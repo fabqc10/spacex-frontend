@@ -3,7 +3,7 @@ import React from 'react'
 
 const ErrorPage = () => {
   return (
-    <div>Error fetching data...</div>
+    <div className='text-center text-white'>Error fetching data...</div>
   )
 }
 
