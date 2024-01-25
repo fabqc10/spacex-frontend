@@ -6,7 +6,15 @@ import LaunchCard from "../components/LaunchCard";
 import RevealEffect from "../components/RevealEffect";
 
 const Launches = () => {
-  const { launches, getlaunches, currentPage } = useContext(LaunchesContext);
+  const { launches, getlaunches, currentPage, error } =
+    useContext(LaunchesContext);
+  if (!launches) {
+    return (
+      <div>
+        <h1 className="text-white">{error}</h1>
+      </div>
+    );
+  }
   return (
     <>
       <div className="mt-10">
