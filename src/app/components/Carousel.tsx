@@ -1,5 +1,7 @@
 import Image from "next/image";
 import React, { useState } from "react";
+import { FaArrowAltCircleRight } from "react-icons/fa";
+import { FaArrowAltCircleLeft } from "react-icons/fa";
 
 type Props = {
   rocket: Rocket;
@@ -20,7 +22,7 @@ const CarouselImg: React.FC<Props> = ({ rocket }) => {
 
   return (
     <div className="relative w-full h-full">
-      <div className="relative h-56 overflow-hidden rounded-lg md:h-96">
+      <div className="relative h-96 overflow-hidden rounded-lg md:h-96">
         {rocket.images.map((img, idx) => (
           <div
             key={idx}
@@ -48,13 +50,15 @@ const CarouselImg: React.FC<Props> = ({ rocket }) => {
         type="button"
         className="absolute top-0 start-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none"
         onClick={prevSlide}
-      ></button>
+      >
+        <FaArrowAltCircleLeft size={25} color="white"/>
+      </button>
       <button
         type="button"
         className="absolute top-0 end-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none"
         onClick={nextSlide}
       >
-        {/* ... (next button SVG) */}
+        <FaArrowAltCircleRight size={25} color="white"/>
       </button>
     </div>
   );

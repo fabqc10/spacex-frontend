@@ -128,7 +128,7 @@ const RocketModal: React.FC<Props> = ({ rocket, toggleModal }) => {
                 </div>
               </div>
             </div>
-            <div className="w-80 h-15 mt-6">
+            <div className="w-80 h-100 mt-6">
               <CarouselImg rocket={rocket} />
             </div>
           </div>
