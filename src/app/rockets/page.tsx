@@ -5,15 +5,21 @@ import RocketPreview from "../components/RocketPreview";
 import RocketModal from "../components/RocketModal";
 
 const Rockets = () => {
-  const { rockets } = useContext(RocketsContext);
-  console.log("ROCKETS", rockets);
+  const { rockets, error } = useContext(RocketsContext);
+  if (!rockets) {
+    return (
+      <div>
+        <h1 className="text-white">{error}</h1>
+      </div>
+    );
+  }
   return (
     <>
       <div>
-        {rockets.map(rocket =>(
-            <RocketPreview rocket={rocket}/>
+        {rockets.map((rocket) => (
+          <RocketPreview rocket={rocket} />
         ))}
-    </div>
+      </div>
     </>
   );
 };
