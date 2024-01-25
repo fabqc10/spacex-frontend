@@ -3,7 +3,7 @@ import Logo from "./components/Logo";
 
 const Home = () => {
   return (
-    <div className="flex flex-col items-center justify-center h-1/5 mt-50 gap-5 mt-50">
+    <div className="flex flex-col items-center justify-center align-center  mt-50 gap-5 mt-50 h-screen">
       <div className="w-1/2 mt-50">
         <Logo />
       </div>
