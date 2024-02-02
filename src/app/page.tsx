@@ -1,11 +1,12 @@
 "use client"
 import Link from "next/link";
 import Logo from "./components/Logo";
-import RevealEffect from "./components/RevealEffect";
+import { Fade } from "react-awesome-reveal";
+
 
 const Home = () => {
   return (
-    <RevealEffect direcction="top cascade collapse">
+    <Fade>
       <div className="flex flex-col items-center justify-center align-center  mt-50 gap-5 mt-50 h-screen">
         <div className="w-1/2 mt-50">
           <Logo />
@@ -20,7 +21,7 @@ const Home = () => {
           Explore
         </Link>
       </div>
-    </RevealEffect>
+    </Fade>
   );
 };
 
