@@ -2,8 +2,8 @@
 import React, { useContext } from "react";
 import { AstronautContext } from "../contexts/astronaut.context";
 import AstronautCard from "../components/AstronautCard";
-import RevealEffect from "../components/RevealEffect";
 import Pagination from "../components/Pagination";
+import { Slide } from "react-awesome-reveal";
 
 const Astronauts = () => {
   const { astronauts, getAstronauts, currentPage, error } =
@@ -22,9 +22,9 @@ const Astronauts = () => {
       </h3>
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
         {astronauts.map((astronaut) => (
-          <RevealEffect>
+          <Slide direction="up" key={astronaut.id}>
             <AstronautCard key={astronaut.id} astronaut={astronaut} />
-          </RevealEffect>
+          </Slide>
         ))}
       </div>
       <Pagination currentPage={currentPage} fetchFunction={getAstronauts} />

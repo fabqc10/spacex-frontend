@@ -3,7 +3,7 @@ import React, { useContext } from "react";
 import { LaunchesContext } from "../contexts/launches.context";
 import Pagination from "../components/Pagination";
 import LaunchCard from "../components/LaunchCard";
-import RevealEffect from "../components/RevealEffect";
+import { Slide } from "react-awesome-reveal";
 
 const Launches = () => {
   const { launches, getlaunches, currentPage, error } =
@@ -19,9 +19,9 @@ const Launches = () => {
     <>
       <div className="mt-10">
         {launches.map((launch) => (
-          <RevealEffect>
-            <LaunchCard launch={launch} />
-          </RevealEffect>
+          <Slide direction="up" key={launch.flight_number}>
+            <LaunchCard launch={launch} key={launch.flight_number}/>
+          </Slide>
         ))}
       </div>
       <Pagination currentPage={currentPage} fetchFunction={getlaunches} />

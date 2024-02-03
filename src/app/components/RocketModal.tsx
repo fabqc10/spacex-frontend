@@ -1,5 +1,6 @@
 import React from "react";
 import CarouselImg from "./Carousel";
+import { Slide } from "react-awesome-reveal";
 
 type Props = {
   rocket: Rocket;
@@ -11,6 +12,7 @@ const RocketModal: React.FC<Props> = ({ rocket, toggleModal }) => {
     <div className="">
       <div className="fixed inset-0 bg-gray-800 bg-opacity-50 z-50"></div>
       <div className="fixed inset-0 flex items-center justify-center z-50  mx-auto">
+      <Slide>
       <div className="bg-white rounded-lg shadow-md dark:bg-gray-700 w-full h-100 max-w-6xl max-h-8xl overflow-y-o">
           <div className="flex items-center justify-between p-4 md:p-5 border-b rounded-t dark:border-gray-600">
             <p className="text-base leading-relaxed text-gray-500 dark:text-gray-400">
@@ -133,6 +135,7 @@ const RocketModal: React.FC<Props> = ({ rocket, toggleModal }) => {
             </div>
           </div>
         </div>
+      </Slide>
       </div>
     </div>
   );

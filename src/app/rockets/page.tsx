@@ -17,7 +17,7 @@ const Rockets = () => {
     <>
       <div>
         {rockets.map((rocket) => (
-          <RocketPreview rocket={rocket} />
+          <RocketPreview rocket={rocket} key={rocket.id}/>
         ))}
       </div>
     </>
