@@ -1,8 +1,7 @@
 "use client";
-import React, { useContext, useState } from "react";
+import React, { useContext} from "react";
 import { RocketsContext } from "../contexts/rockets.context";
 import RocketPreview from "../components/RocketPreview";
-import RocketModal from "../components/RocketModal";
 
 const Rockets = () => {
   const { rockets, error } = useContext(RocketsContext);

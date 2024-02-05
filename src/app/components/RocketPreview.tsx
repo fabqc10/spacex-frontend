@@ -1,6 +1,5 @@
 import Image from "next/image";
 import React, { useState } from "react";
-import RevealEffect from "./RevealEffect";
 import RocketModal from "./RocketModal";
 import { Slide } from "react-awesome-reveal";
 

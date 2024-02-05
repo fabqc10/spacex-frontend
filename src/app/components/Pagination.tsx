@@ -1,5 +1,3 @@
-import React from "react";
-
 type props = {
     currentPage:number,
     fetchFunction:(page:number)=>void

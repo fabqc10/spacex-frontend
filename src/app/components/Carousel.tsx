@@ -1,4 +1,3 @@
-import Image from "next/image";
 import React, { useState } from "react";
 import { FaArrowAltCircleRight } from "react-icons/fa";
 import { FaArrowAltCircleLeft } from "react-icons/fa";
